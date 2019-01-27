@@ -44,7 +44,7 @@ class Rover():
 
 ############################################################################################################
 
-################## CREATE A ROVER WITH INSTRUCTIONS FROM INPUT FILE ##################
+################## READ INPUT FILE ##################
 
 rover_lines=[] #Creates an array with each line of the instructions file
 with open('marsinput.txt') as f:
