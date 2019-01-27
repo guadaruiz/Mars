@@ -3,10 +3,16 @@ class Plateau():
         self.x_size= x_size
         self.y_size= y_size
 
+############################################################################################################
+
+################## READ INPUT FILE ##################
+
 rover_lines=[] #Creates an array with each line of the instructions file
 with open('rover.txt') as f:
     for line in f:
         rover_lines.append(line.strip())
+
+################## CREATE A PLATEAU FROM INPUT FILE ##################
 
 plateau = []
 plateau[:0] = rover_lines[0].split(' ')
