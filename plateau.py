@@ -8,7 +8,7 @@ class Plateau():
 ################## READ INPUT FILE ##################
 
 rover_lines=[] #Creates an array with each line of the instructions file
-with open('rover.txt') as f:
+with open('marsinput.txt') as f:
     for line in f:
         rover_lines.append(line.strip())
 
