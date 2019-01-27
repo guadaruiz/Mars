@@ -23,7 +23,6 @@ class Rover():
         direction_dictionary = dict(zip(direction, direction_math))
 
         mathdir_rover=direction_dictionary[self.direction[0]]
-        print(mathdir_rover)
 
         for instruction in self.instructions:
             if instruction == 'M':
@@ -36,9 +35,9 @@ class Rover():
 
             elif instruction == 'L':
     #            mathdir_rover1= mathdir_rover1 * np.array('[[0 1]; [-1 0]]')
-                mathdir_rover= np.dot( np.array([[0,1],
-                                                [-1,0]]), mathdir_rover)
+                mathdir_rover= np.dot( np.array([[0,-1],
+                                                [1,0]]), mathdir_rover)
 
-        print(self.position,"K")
-        # return self.position, self.get_key(mathdir_rover, direction_dictionary)
-        return self.position, "k"
+        print(self.position,self.get_key(mathdir_rover, direction_dictionary))
+
+        return self.position, self.get_key(mathdir_rover, direction_dictionary)
