@@ -5,8 +5,7 @@ Rover_test=Rover(np.array([int(0),int(1)]), 'N', 'MMLMRRM')
 direction_dictionary=Rover_test.create_direction_dictionary()
 mathdir_rover=direction_dictionary[Rover_test.direction[0]]
 
-print(Rover_test.get_key(mathdir_rover, direction_dictionary))
-
+#print(Rover_test.get_key(mathdir_rover, direction_dictionary))
 #Rover_test.move()
 
 def test_move_dir():
@@ -17,7 +16,3 @@ def test_move_position():
 
 def test_get_key():
     assert Rover_test.get_key(mathdir_rover, direction_dictionary) == "N"
-
-#print(Rover_test.get_key()[0])
-
-#print(get_key(direction_dictionary[Rover_test[0]], direction_dictionary))
