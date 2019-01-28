@@ -66,7 +66,6 @@ Output:
 [1 3] N
 [5 1] E
 
-4. HOW TO RUN THE CODE:
 
 4. a. RUNNING THE CODE:
 
