@@ -9,6 +9,12 @@ class Rover():
         #self.move= move_rover
         #self.get_key= get_key
 
+    def create_direction_dictionary(self):
+        direction = ['N', 'S', 'W', 'E']
+        direction_math = [np.array([0,1]), np.array([0,-1]), np.array([-1,0]), np.array([1,0])]
+        direction_dictionary = dict(zip(direction, direction_math))
+        return direction_dictionary
+
     def get_key(self, direction_math, direction_dictionary):
         for key, value in direction_dictionary.items():
             if np.array_equal(direction_math, value):
@@ -18,29 +24,23 @@ class Rover():
 
     def move(self):
 
-        direction = ['N', 'S', 'W', 'E']
-        direction_math = [np.array([0,1]), np.array([0,-1]), np.array([-1,0]), np.array([1,0])]
-        direction_dictionary = dict(zip(direction, direction_math))
-
+        direction_dictionary=self.create_direction_dictionary()
         mathdir_rover=direction_dictionary[self.direction[0]]
+        positionFinal=self.position
 
         for instruction in self.instructions:
             if instruction == 'M':
-                self.position = self.position + mathdir_rover
+                positionFinal = positionFinal + mathdir_rover
 
             elif instruction == 'R':
-                #mathdir_rover1= mathdir_rover1*np.array('[[0 -1]; [1 0]]')
-                mathdir_rover= np.dot( np.array([[0,1],
-                                             [-1,0]]), mathdir_rover)
+                mathdir_rover= np.dot(np.array([[0 ,1],[-1,0]]), mathdir_rover)
 
             elif instruction == 'L':
-    #            mathdir_rover1= mathdir_rover1 * np.array('[[0 1]; [-1 0]]')
-                mathdir_rover= np.dot( np.array([[0,-1],
-                                                [1,0]]), mathdir_rover)
+                mathdir_rover= np.dot(np.array([[0,-1],[1, 0]]), mathdir_rover)
 
-        print(self.position,self.get_key(mathdir_rover, direction_dictionary))
+        print(positionFinal,self.get_key(mathdir_rover, direction_dictionary))
 
-        return self.position, self.get_key(mathdir_rover, direction_dictionary)
+        return positionFinal, self.get_key(mathdir_rover, direction_dictionary)
 
 ############################################################################################################
 
@@ -64,6 +64,7 @@ instructions_rover1 = [] #Gives a vector of strings with each instruction for Ro
 instructions_rover1[:0] = rover_lines[2]
 
 Rover_1=Rover(rover1_position, rover1_direction, instructions_rover1)
+
 
 ################## CREATE ROVER 2 WITH INSTRUCTIONS FROM INPUT FILE ##################
 
