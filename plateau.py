@@ -1,4 +1,7 @@
 class Plateau():
+
+    ''' This class can be used to create the plateau on which rovers can move. It takes two inputs as arguments:
+    x and y size.'''
     def __init__ (self, x_size, y_size):
         self.x_size= x_size
         self.y_size= y_size
