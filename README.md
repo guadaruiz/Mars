@@ -1,8 +1,8 @@
 # Mars_Git
 
 ** Version 1.0.0 **
-Programming language version used: Python 3.7.0 \\
-Python unit testing framework used: pytest \\
+Programming language version used: Python 3.7.0 \n
+Python unit testing framework used: pytest \n
 
 1. PROBLEM DESCRIPTION:
 
@@ -16,36 +16,44 @@ Assume that the square directly North from (x, y) is (x, y+1).
 
 2. a. PROGRAM GENERAL IDEA:
 
-Two type of classes were created in order to tackle this problem: plateau.py and rover.py. The former is used to create a plateau with the input dimensions, and the latter to create 2 rovers with the input data.
+Three type classes were created in order to tackle this problem: reader.py, plateau.py and rover.py.
 
-The rover.py file includes a move() function inside the Rover class, which reads from the input file the initial position and initial direction of the rover and moves it according to its instructions.
+    Reader() class: reads an input file and assigns to different variables information from the input text.
 
-In mars_main the two rovers created in rover.py are called and the sequential instructions are followed by using the move() function in each case.
+    Plateau() class: can be used to create a plateau with the input dimensions. It includes a function to show dimensions.
 
+    Rover() class: can be used to create rover objects, taking as input a vector of initial position, a pointing direction represented by a cardinal letter string (N, S, W or E), and a set of movement instructions indicated with the letters L, R and M. This class includes a move() function which reads from the input file the initial position and initial direction of the rover and moves it according to its instructions.
+
+The main scrip of this program is the mars_main.py file. It takes the input data, creates 2 rovers, and performs the input instructions in each one. When executed, the program returns the final position of Rover 1 and its direction in the first line, and the same values for Rover 2 in the second line.
+
+Remark:
 plateau.py is not currently used by the main program since for the provided input data, the rovers do not exceed the plateau dimensions when moving. Nevertheless, in order to make it more general, an error message should be included in a future version when final position gets out of range.
 
-Finally, a test file is included (test_rover.py) which runs some test to check the functions defined in the rover.py file.
+Finally, a test file is included (test_rover.py) which runs some tests to check the functions defined in the rover.py file (run with pytest). A rober created for testing purposes (Object Rover_test) is created and 3 test functions can be run with it in the rover.py file.
 
 2. b. FILE STRUCTURE:
 
 The folder consists of the following files:
 
-    1. mars_main.py : Main file for executing the program. Calls plateau.py in order to create 2 rovers and move them according to instructions from input file.
-    2. plateau.py : Class Plateau file. Plateau can be initialized with input file data by calling plateau.py.
-    3. rover.py : Class Plateau file. Plateau can be initialized with input file data by calling rover.py.
-    4. marsinput.txt : input file.
-    5. test_rover.py : Python unit testing file (run with pytest). A rober used for testing purposes (Object Rover_test) is created and 3 test functions can be run with it in the rover.py file.
+    1. mars_main.py : Main file for executing the program
+    2. reader.py : Class Reader file
+    2. plateau.py : Class Plateau file
+    3. rover.py : Class Rover file
+    4. marsinput.txt : input file
+    5. test_rover.py : Python unit testing file
     6. README.md : The current readme file.
 
 3. a. INPUT:
 
-Input file 'marsinput.txt' needs to be placed in the same folder as the rest of the files. Name (or path, if needed) of this file is specified in rover.py after defining class rover (line 50) and in plateau.py after defining class plateau (line 11).
+Input file 'marsinput.txt' needs to be placed in the same folder as the rest of the files. The name of this file is specified in mars_main.py after comments (line 24).
 
-Input should be written in the following manner:
-The first line is upper-right coordinates of the plateau, the lowerleft coordinates are assumed to be 0,0.
-The rest of the input is information pertaining to the rovers that have been deployed. Each rover has two lines of input. The first line gives the rover’s position, and the second line is a series of instructions telling the rover how to explore the plateau.
-The position is made up of two integers and a letter separated by spaces, corresponding to the x and y co-ordinates and the rover’s orientation.
-Each rover will be finished sequentially, which means that the second rover won’t start to move until the first one has finished moving.
+Input file should be written in the following manner:
+
+    Line 1: x and y dimensions of plateau separated by a space.
+    Line 2: Position and direction on Rover 1. The position is made up of two integers and a letter separated by spaces, corresponding to the x and y co-ordinates and the rover’s orientation.
+    Line 3: Set of instructions for Rover 1. This is indicated with a string of letters L, R and M (no spaces).
+    Line 4: Position and direction on Rover 2. The position is made up of two integers and a letter separated by spaces, corresponding to the x and y co-ordinates and the rover’s orientation.
+    Line 5: Set of instructions for Rover 2. This is indicated with a string of letters L, R and M (no spaces).
 
 3. b. OUTPUT:
 
