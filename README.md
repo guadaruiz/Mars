@@ -12,7 +12,7 @@ A rover’s position and location is represented by a combination of x and y co-
 
 In order to control a rover, NASA sends a simple string of letters. The possible letters are ‘L’, ‘R’ and ‘M’. ‘L’ and ‘R’ makes the rover spin 90 degrees left or right respectively, without moving from its current spot. ‘M’ means move forward one grid point, and maintain the same heading.
 
-Assume that the square directly North from (x, y) is (x, y+1).
+The square directly North from (x, y) is (x, y+1).
 
 2. a. PROGRAM GENERAL IDEA:
 
@@ -24,12 +24,12 @@ Three type classes were created in order to tackle this problem: reader.py, plat
 
     Rover() class: can be used to create rover objects, taking as input a vector of initial position, a pointing direction represented by a cardinal letter string (N, S, W or E), and a set of movement instructions indicated with the letters L, R and M. This class includes a move() function which reads from the input file the initial position and initial direction of the rover and moves it according to its instructions.
 
-The main scrip of this program is the mars_main.py file. It takes the input data, creates 2 rovers, and performs the input instructions in each one. When executed, the program returns the final position of Rover 1 and its direction in the first line, and the same values for Rover 2 in the second line.
+The main script of this program is the mars_main.py file. It takes the input data, creates 2 rovers, and performs the input instructions in each one, sequentially. When executed, the program returns the final position of Rover 1 and its direction in the first line, and the same parameters for Rover 2 in the second line.
 
 Remark:
-plateau.py is not currently used by the main program since for the provided input data, the rovers do not exceed the plateau dimensions when moving. Nevertheless, in order to make it more general, an error message should be included in a future version when final position gets out of range.
+plateau.py is not currently used by the main program since for the provided input data, the rovers do not exceed the plateau dimensions when moving. Nevertheless, in order to make the program more general, an error message should be included in a future version when final position gets out of plateau range.
 
-Finally, a test file is included (test_rover.py) which runs some tests to check the functions defined in the rover.py file (run with pytest). A rober created for testing purposes (Object Rover_test) is created and 3 test functions can be run with it in the rover.py file.
+Finally, a test file is included (test_rover.py) which runs some tests to check the functions defined in the rover.py file (run with pytest). A rover created for testing purposes (Object Rover_test) is created and 3 test functions can be run with it in the rover.py file.
 
 2. b. FILE STRUCTURE:
 
@@ -50,9 +50,9 @@ Input file 'marsinput.txt' needs to be placed in the same folder as the rest of 
 Input file should be written in the following manner:
 
     Line 1: x and y dimensions of plateau separated by a space.
-    Line 2: Position and direction on Rover 1. The position is made up of two integers and a letter separated by spaces, corresponding to the x and y co-ordinates and the rover’s orientation.
+    Line 2: Position and direction of Rover 1. The position is made up of two integers and a letter separated by spaces, corresponding to the x and y co-ordinates and the rover’s orientation.
     Line 3: Set of instructions for Rover 1. This is indicated with a string of letters L, R and M (no spaces).
-    Line 4: Position and direction on Rover 2. The position is made up of two integers and a letter separated by spaces, corresponding to the x and y co-ordinates and the rover’s orientation.
+    Line 4: Position and direction of Rover 2. The position is made up of two integers and a letter separated by spaces, corresponding to the x and y co-ordinates and the rover’s orientation.
     Line 5: Set of instructions for Rover 2. This is indicated with a string of letters L, R and M (no spaces).
 
 3. b. OUTPUT:
@@ -79,9 +79,9 @@ The output for each rover should be its final co-ordinates and heading indicated
 
 Simply execute in the folder containing all files the command line:
 
-python main_main.py
+python mars_main.py
 
-The output shown in the example (section 3.c of this README) should be displayed in the terminal.
+The output shown in the example (section 3.c of this README) should be displayed in the terminal as a result.
 
 4. b. RUNNING TESTS:
 
