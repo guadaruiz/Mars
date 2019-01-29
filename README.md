@@ -2,7 +2,7 @@
 
 ** Version 1.0.0 **  
     Programming language version used: Python 3.7.0  
-    Python unit testing framework used: pytest  
+    Python unit testing framework used: pytest version 4.0.2  
 
 1. PROBLEM DESCRIPTION:
 
