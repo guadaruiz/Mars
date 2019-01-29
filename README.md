@@ -1,8 +1,8 @@
 # Mars_Git
 
 ** Version 1.0.0 **
-    Programming language version used: Python 3.7.0 \n
-    Python unit testing framework used: pytest \n
+    Programming language version used: Python 3.7.0  
+    Python unit testing framework used: pytest  
 
 1. PROBLEM DESCRIPTION:
 
@@ -63,16 +63,16 @@ The output for each rover should be its final co-ordinates and heading indicated
 
     Input:
 
-    5 5
-    1 2 N
-    LMLMLMLMM
-    3 3 E
-    MMRMMRMRRM
+    5 5  
+    1 2 N  
+    LMLMLMLMM  
+    3 3 E  
+    MMRMMRMRRM  
 
-    Output:
+    Output:  
 
-    [1 3] N
-    [5 1] E
+    [1 3] N  
+    [5 1] E  
 
 
 4. a. RUNNING THE CODE:
